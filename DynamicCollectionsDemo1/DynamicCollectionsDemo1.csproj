@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2ECA502-F174-47B2-A32D-629F93723C47}</ProjectGuid>
+    <ProjectGuid>{DEB2A044-C9F8-4974-ABBF-44BCB62A6A5E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LabsNRef</RootNamespace>
-    <AssemblyName>LabsNRef</AssemblyName>
+    <RootNamespace>DynamicCollectionsDemo1</RootNamespace>
+    <AssemblyName>DynamicCollectionsDemo1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,17 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Labs\Collections\Collection Exercises.pdf" />
-    <None Include="Labs\PLT_Programs.pdf" />
-    <None Include="Reference Materials\CSharp Programming - Venkat.pdf" />
-    <None Include="Reference Materials\Introduction to dotNET Framework.pdf" />
-    <None Include="Reference Materials\Programming Basics BigPicture and Quiz Solutions.pptx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Labs\Collections\01-TrainingAppProblem.jpg" />
-    <Content Include="Labs\Collections\02-CompanyOrders.jpg" />
-    <Content Include="Labs\Collections\03-SkillAssure.jpg" />
-    <Content Include="Labs\Collections\04-MembershipApp.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
