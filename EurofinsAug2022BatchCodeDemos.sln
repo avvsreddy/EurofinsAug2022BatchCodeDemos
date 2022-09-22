@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicCollectionsDemo3", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyOrdersConsoleApp", "CompanyOrdersConsoleApp\CompanyOrdersConsoleApp.csproj", "{58015512-1BCE-40BE-90E3-AB921A00D4FE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exceptions Demos", "Exceptions Demos", "{20B5684D-F3D5-4F41-AB0D-F655132341E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsDemoConsoleApp1", "ExceptionsDemoConsoleApp1\ExceptionsDemoConsoleApp1.csproj", "{3AC24C06-BBCD-4F0D-8025-8BD9AEDB98F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +103,10 @@ Global
 		{58015512-1BCE-40BE-90E3-AB921A00D4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58015512-1BCE-40BE-90E3-AB921A00D4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58015512-1BCE-40BE-90E3-AB921A00D4FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC24C06-BBCD-4F0D-8025-8BD9AEDB98F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC24C06-BBCD-4F0D-8025-8BD9AEDB98F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC24C06-BBCD-4F0D-8025-8BD9AEDB98F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC24C06-BBCD-4F0D-8025-8BD9AEDB98F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,7 @@ Global
 		{A2F8C7AF-01E3-41AA-A8D5-EF4CA2941029} = {5A1755EC-E9F0-4B01-A60D-137C45F228F9}
 		{DEB2A044-C9F8-4974-ABBF-44BCB62A6A5E} = {5A1755EC-E9F0-4B01-A60D-137C45F228F9}
 		{94BE910D-5DF9-4B74-9B42-33394B0C9E1B} = {5A1755EC-E9F0-4B01-A60D-137C45F228F9}
+		{3AC24C06-BBCD-4F0D-8025-8BD9AEDB98F8} = {20B5684D-F3D5-4F41-AB0D-F655132341E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91D68505-48B4-43C2-8A5A-74EE884290AA}

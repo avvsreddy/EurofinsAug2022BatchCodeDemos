@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace CompanyOrdersConsoleApp
 {
@@ -16,7 +17,7 @@ namespace CompanyOrdersConsoleApp
             company.Items.Add(i2);
             company.Items.Add(i3);
 
-            RegCustomer customer = new RegCustomer { Discount = 100 };
+            Customer customer = new Customer();// { Discount = 100 };
             company.Customers.Add(customer);
 
             Order order = new Order();
@@ -26,6 +27,7 @@ namespace CompanyOrdersConsoleApp
             order.OrderedItems.Add(oi);
 
             System.Console.WriteLine($"Total Worth: {company.GetTotalWorthOfOrdersPlaced()}");
+            System.Console.WriteLine(company.GetTotalRegCustomersCount());
 
         }
     }
@@ -39,15 +41,24 @@ namespace CompanyOrdersConsoleApp
         public int GetTotalCustomersCount()
         {
             int count = 0;
-            //implement 
+            count = Customers.Count;
             return count;
         }
 
         public int GetTotalRegCustomersCount()
         {
-            int count = 0;
-            //implement
-            return count;
+            //int count = 0;
+            ////implement
+            //foreach (Customer customer in Customers)
+            //{
+            //    if (customer is RegCustomer)
+            //        count++;
+            //}
+
+
+            //return count;
+
+            return Customers.OfType<RegCustomer>().Count();
         }
 
         public double GetTotalWorthOfOrdersPlaced()
