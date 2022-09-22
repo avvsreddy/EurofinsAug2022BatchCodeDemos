@@ -35,6 +35,21 @@ namespace CompanyOrdersConsoleApp
         public List<Item> Items { get; set; } = new List<Item>();
         public List<Customer> Customers { get; set; } = new List<Customer>();
 
+
+        public int GetTotalCustomersCount()
+        {
+            int count = 0;
+            //implement 
+            return count;
+        }
+
+        public int GetTotalRegCustomersCount()
+        {
+            int count = 0;
+            //implement
+            return count;
+        }
+
         public double GetTotalWorthOfOrdersPlaced()
         {
             double totalAmount = 0;
