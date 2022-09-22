@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicCollectionsDemo1", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicCollectionsDemo3", "DynamicCollectionsDemo3\DynamicCollectionsDemo3.csproj", "{94BE910D-5DF9-4B74-9B42-33394B0C9E1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyOrdersConsoleApp", "CompanyOrdersConsoleApp\CompanyOrdersConsoleApp.csproj", "{58015512-1BCE-40BE-90E3-AB921A00D4FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{94BE910D-5DF9-4B74-9B42-33394B0C9E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94BE910D-5DF9-4B74-9B42-33394B0C9E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94BE910D-5DF9-4B74-9B42-33394B0C9E1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58015512-1BCE-40BE-90E3-AB921A00D4FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58015512-1BCE-40BE-90E3-AB921A00D4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58015512-1BCE-40BE-90E3-AB921A00D4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58015512-1BCE-40BE-90E3-AB921A00D4FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
