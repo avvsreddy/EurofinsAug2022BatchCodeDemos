@@ -38,29 +38,14 @@ namespace CompanyOrdersConsoleApp
         public double GetTotalWorthOfOrdersPlaced()
         {
             double totalAmount = 0;
-            double totalDiscount = 0;
+            //double totalDiscount = 0;
             // for each customer
             foreach (Customer customer in Customers)
             {
-                //for each orders placed by each customer
-                foreach (Order order in customer.Orders)
-                {
-                    // for each orders - ordered items
-                    foreach (OrderedItem oItem in order.OrderedItems)
-                    {
-                        totalAmount += oItem.Quantity * oItem.Item.Rate;
-                    }
-                }
-
-                if (customer is RegCustomer)
-                {
-                    RegCustomer regCustomer = customer as RegCustomer;
-                    //RegCustomer regCustomer = (RegCustomer)customer;
-                    totalDiscount += regCustomer.Discount;
-                }
+                totalAmount += customer.GetOrdersTotal();
 
             }
-            return totalAmount - totalDiscount;
+            return totalAmount;
         }
 
     }
@@ -74,30 +59,51 @@ namespace CompanyOrdersConsoleApp
     class Customer
     {
         public List<Order> Orders { get; set; } = new List<Order>();
+
+        public virtual double GetOrdersTotal()
+        {
+            double orderTotal = 0;
+            foreach (Order order in Orders)
+            {
+                orderTotal += order.GetOrderTotal();
+            }
+            return orderTotal;
+
+        }
     }
 
     class RegCustomer : Customer
     {
         public double Discount { get; set; }
-        //private double discount;
-        //public void SetDiscount(double discount)
-        //{
-        //    this.discount = discount;
-        //}
-        //public double GetDiscount()
-        //{
-        //    return this.discount;
-        //}
+        public override double GetOrdersTotal()
+        {
+            return base.GetOrdersTotal() - Discount;
+        }
     }
 
     class Order
     {
         public List<OrderedItem> OrderedItems { get; set; } = new List<OrderedItem>();
+
+        public double GetOrderTotal()
+        {
+            double orderTotal = 0;
+            foreach (OrderedItem orderedItem in OrderedItems)
+            {
+                orderTotal += orderedItem.GetItemValue();
+            }
+            return orderTotal;
+        }
     }
 
     class OrderedItem
     {
         public int Quantity { get; set; }
         public Item Item { get; set; }
+
+        public double GetItemValue()
+        {
+            return Quantity * Item.Rate;
+        }
     }
 }
