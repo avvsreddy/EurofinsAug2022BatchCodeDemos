@@ -17,7 +17,7 @@ namespace ConsoleApp1
         {
             BigClass b1 = new BigClass();
             Program p1 = new Program();
-            using (p1)
+            using (b1)
             {
                 Console.WriteLine("end of m1");
                 Console.WriteLine("b1 goes out of scope");

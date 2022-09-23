@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2ECA502-F174-47B2-A32D-629F93723C47}</ProjectGuid>
+    <ProjectGuid>{E39E7BC2-6E23-485B-935B-552C82169C6D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LabsNRef</RootNamespace>
-    <AssemblyName>LabsNRef</AssemblyName>
+    <RootNamespace>CalculatorConsoleApp</RootNamespace>
+    <AssemblyName>CalculatorConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,22 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Lab-Exceptions.pdf" />
-    <None Include="Labs\Collections\Collection Exercises.pdf" />
-    <None Include="Labs\PLT_Programs.pdf" />
-    <None Include="Reference Materials\CSharp Programming - Venkat.pdf" />
-    <None Include="Reference Materials\Exceptions\Lab-Exceptions.pdf" />
-    <None Include="Reference Materials\Introduction to dotNET Framework.pdf" />
-    <None Include="Reference Materials\Programming Basics BigPicture and Quiz Solutions.pptx" />
-    <None Include="Reference Materials\Unit Testing\Effective Unit Testing.pdf" />
-    <None Include="Reference Materials\Unit Testing\Unit Testing Lab.docx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Labs\Collections\01-TrainingAppProblem.jpg" />
-    <Content Include="Labs\Collections\02-CompanyOrders.jpg" />
-    <Content Include="Labs\Collections\03-SkillAssure.jpg" />
-    <Content Include="Labs\Collections\04-MembershipApp.jpg" />
-    <Content Include="Reference Materials\Unit Testing\ProblemStatement-Modified.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
