@@ -43,7 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="BusinessLayer\Calculator.cs" />
+    <Compile Include="Exceptions\OddInputException.cs" />
+    <Compile Include="Exceptions\NegativeInputException.cs" />
+    <Compile Include="Exceptions\ZeroInputException.cs" />
+    <Compile Include="Presentation\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
