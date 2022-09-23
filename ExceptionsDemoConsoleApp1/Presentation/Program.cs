@@ -60,4 +60,18 @@ namespace ExceptionsDemoConsoleApp1
 
         }
     }
+
+    class Company
+    {
+        public static int EmpCount;
+
+        static Company()
+        {
+            EmpCount = 234;
+        }
+        public Company()
+        {
+            EmpCount = 3423;
+        }
+    }
 }
