@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculatorLibrary;
+using System;
 
 namespace MultilayeredAppDemo
 {
@@ -18,8 +19,8 @@ namespace MultilayeredAppDemo
             fno = int.Parse(Console.ReadLine());
             Console.Write("Enter second number: ");
             sno = int.Parse(Console.ReadLine());
-
-            sum = CalculatorLibrary.Calculator.Sum(fno, sno);
+            Calculator calc = new Calculator();
+            sum = calc.Sum(fno, sno);
 
             Console.WriteLine($"The sum of {fno} and {sno} is {sum}");
 

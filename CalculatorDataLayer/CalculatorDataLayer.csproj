@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9EAAA233-4B43-4358-83DF-59420CF58C3A}</ProjectGuid>
+    <ProjectGuid>{3816A1ED-C622-4B42-B04B-4FED8E097281}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CalculatorLibrary</RootNamespace>
-    <AssemblyName>CalculatorLibrary</AssemblyName>
+    <RootNamespace>CalculatorDataLayer</RootNamespace>
+    <AssemblyName>CalculatorDataLayer</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,14 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
+    <Compile Include="CalculatorFileRepositor.cs" />
+    <Compile Include="ICalculatorRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CalculatorDataLayer\CalculatorDataLayer.csproj">
-      <Project>{3816a1ed-c622-4b42-b04b-4fed8e097281}</Project>
-      <Name>CalculatorDataLayer</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

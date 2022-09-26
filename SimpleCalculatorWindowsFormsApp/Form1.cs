@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculatorLibrary;
+using System;
 using System.Windows.Forms;
 
 namespace SimpleCalculatorWindowsFormsApp
@@ -14,7 +15,8 @@ namespace SimpleCalculatorWindowsFormsApp
         {
             int fno = int.Parse(textBox1.Text);
             int sno = int.Parse(textBox2.Text);
-            int sum = CalculatorLibrary.Calculator.Sum(fno, sno);
+            Calculator calc = new Calculator();
+            int sum = calc.Sum(fno, sno);
             MessageBox.Show($"The sum {fno} and {sno} is {sum}");
         }
     }

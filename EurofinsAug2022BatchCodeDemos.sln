@@ -49,6 +49,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorLibrary.UnitTestProject", "CalculatorLibrary.UnitTestProject\CalculatorLibrary.UnitTestProject.csproj", "{D43229AE-D2A6-4E39-B6B1-2C78DB993C53}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Layer", "Data Layer", "{96CF3C63-0D16-4900-AC85-593A98ABDACD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorDataLayer", "CalculatorDataLayer\CalculatorDataLayer.csproj", "{3816A1ED-C622-4B42-B04B-4FED8E097281}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +123,10 @@ Global
 		{D43229AE-D2A6-4E39-B6B1-2C78DB993C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D43229AE-D2A6-4E39-B6B1-2C78DB993C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D43229AE-D2A6-4E39-B6B1-2C78DB993C53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3816A1ED-C622-4B42-B04B-4FED8E097281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3816A1ED-C622-4B42-B04B-4FED8E097281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3816A1ED-C622-4B42-B04B-4FED8E097281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3816A1ED-C622-4B42-B04B-4FED8E097281}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +145,8 @@ Global
 		{94BE910D-5DF9-4B74-9B42-33394B0C9E1B} = {5A1755EC-E9F0-4B01-A60D-137C45F228F9}
 		{3AC24C06-BBCD-4F0D-8025-8BD9AEDB98F8} = {20B5684D-F3D5-4F41-AB0D-F655132341E6}
 		{D43229AE-D2A6-4E39-B6B1-2C78DB993C53} = {12E0DD4C-3EF9-442B-9EDF-1722EAFD9F97}
+		{96CF3C63-0D16-4900-AC85-593A98ABDACD} = {1B076CA5-39B9-4B29-9A2F-02B6A58EBBE8}
+		{3816A1ED-C622-4B42-B04B-4FED8E097281} = {96CF3C63-0D16-4900-AC85-593A98ABDACD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91D68505-48B4-43C2-8A5A-74EE884290AA}
