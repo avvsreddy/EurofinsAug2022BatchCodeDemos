@@ -15,6 +15,7 @@ namespace ParallelConsoleApp2
             int[,] matrix2 = new int[ROWS, COL];
             InitializeMatrix(matrix1);
             InitializeMatrix(matrix2);
+            Console.WriteLine("Running Seq....");
             Stopwatch sw = Stopwatch.StartNew();
             var result = MultiplyMatrix(matrix1, matrix2);
             Console.WriteLine(sw.ElapsedMilliseconds);
