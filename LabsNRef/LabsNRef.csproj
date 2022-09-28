@@ -58,6 +58,8 @@
     <None Include="Reference Materials\Unit Testing\Effective Unit Testing.pdf" />
     <None Include="Reference Materials\Unit Testing\Unit Testing Lab.docx" />
     <None Include="Schedule\SkillAssure Eurofins-.NET  - Program Design - Aug 2022.xlsx" />
+    <None Include="Threads\Multithreading.pdf" />
+    <None Include="Threads\Spell Checker - Multi Threading Case Study.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Labs\Collections\01-TrainingAppProblem.jpg" />
