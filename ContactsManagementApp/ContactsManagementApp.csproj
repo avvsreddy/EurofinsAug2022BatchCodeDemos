@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\ContactsDbRepository.cs" />
     <Compile Include="Data\ContactsFileRepository.cs" />
     <Compile Include="Data\IContactsRepository.cs" />
     <Compile Include="Entities\Contact.cs" />
