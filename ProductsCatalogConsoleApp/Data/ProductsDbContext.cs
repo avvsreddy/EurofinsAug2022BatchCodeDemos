@@ -15,6 +15,7 @@ namespace ProductsCatalogConsoleApp.Data
         // 2. Configure/map the tables with Entity
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Catagory> Catagories { get; set; }
 
     }
 }

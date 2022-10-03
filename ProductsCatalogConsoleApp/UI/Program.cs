@@ -6,23 +6,80 @@ using System.Linq;
 
 namespace ProductsCatalogConsoleApp
 {
+    //class NamePrice
+    //{
+    //    public string PName { get; set; }
+    //    public int Price { get; set; }
+    //}
+
     internal class Program
     {
         static void Main(string[] args)
         {
             ProductsDbContext db = new ProductsDbContext();
             db.Database.Log = Console.WriteLine;
+            // Product name and C Name
+            //var plist = from p in db.Products
+            //            select new
+            //            { PName = p.Name, CName = p.TheCatagory.Name };
 
-            var products = (from p in db.Products
-                            select p).ToList();
+            //foreach (var item in plist)
+            //{
+            //    Console.WriteLine(item.PName + "\t" + item.CName);
+            //}
 
-            foreach (var item in products)
+
+            var plist = from p in db.Products.Include("TheCatagory")
+                        select p;
+
+            foreach (var item in plist)
             {
-                Console.WriteLine(item.Name);
+                Console.WriteLine($"{item.Name} \t {item.TheCatagory.Name}");
             }
 
+        }
 
+        private static void UpdateProductWithCat()
+        {
+            ProductsDbContext db = new ProductsDbContext();
+            db.Database.Log = Console.WriteLine;
 
+            // update iphone with mobiles catagory
+
+            var cat = db.Catagories.Find(1);
+            var p = db.Products.Find(2);
+            p.TheCatagory = cat;
+            db.SaveChanges();
+        }
+
+        private static void ProductWithExistingCatagory()
+        {
+            ProductsDbContext db = new ProductsDbContext();
+            db.Database.Log = Console.WriteLine;
+
+            // Add new product with existing catagory
+            //var existingCat = db.Catagories.Find(1);
+            var mobile = (from c in db.Catagories
+                          where c.Name == "Mobiles"
+                          select c).FirstOrDefault();
+            var p = new Product { Name = "Galaxy Z Fold", Brand = "Samsung", Price = 78000, InStock = true, TheCatagory = mobile };
+            db.Products.Add(p);
+            db.SaveChanges();
+        }
+
+        private static void SaveProductAndCatagory()
+        {
+            ProductsDbContext db = new ProductsDbContext();
+            db.Database.Log = Console.WriteLine;
+            // add new product with new catagory
+
+            var cat = new Catagory { Name = "Mobiles", Description = "Smart Devices" };
+
+            var p = new Product { Name = "IPhone 13 Max", Price = 75000, Brand = "Apple", InStock = true, TheCatagory = cat };
+
+            db.Products.Add(p);
+            //db.Catagories.Add(cat);
+            db.SaveChanges();
         }
 
         private static void Linq()
