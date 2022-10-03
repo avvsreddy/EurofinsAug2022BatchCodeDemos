@@ -29,7 +29,7 @@ namespace ProductsCatalogConsoleApp
             //}
 
 
-            var plist = from p in db.Products.Include("TheCatagory")
+            var plist = from p in db.Products//.Include("TheCatagory")
                         select p;
 
             foreach (var item in plist)

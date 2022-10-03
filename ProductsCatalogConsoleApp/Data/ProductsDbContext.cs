@@ -17,5 +17,7 @@ namespace ProductsCatalogConsoleApp.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Catagory> Catagories { get; set; }
 
+        public DbSet<Supplier> Suppliers { get; set; }
+
     }
 }
