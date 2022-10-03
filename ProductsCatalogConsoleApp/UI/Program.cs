@@ -10,7 +10,23 @@ namespace ProductsCatalogConsoleApp
     {
         static void Main(string[] args)
         {
+            ProductsDbContext db = new ProductsDbContext();
+            db.Database.Log = Console.WriteLine;
 
+            var products = (from p in db.Products
+                            select p).ToList();
+
+            foreach (var item in products)
+            {
+                Console.WriteLine(item.Name);
+            }
+
+
+
+        }
+
+        private static void Linq()
+        {
             List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             //table: numbers
             // column: number
@@ -66,11 +82,6 @@ namespace ProductsCatalogConsoleApp
             var result = from p in db.Products
                          where p.Price == (from i in db.Products select p.Price).Max()
                          select p;
-
-
-
-
-
         }
 
         private static void Edit()
