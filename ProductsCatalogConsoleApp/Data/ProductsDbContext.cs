@@ -14,6 +14,13 @@ namespace ProductsCatalogConsoleApp.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
+            // create and map to sp
+
+            //modelBuilder.Entity<Product>().MapToStoredProcedures();
+
+            modelBuilder.Types().Configure(t => t.MapToStoredProcedures());
+
             //base.OnModelCreating(modelBuilder);
 
             // Fluent API

@@ -2,6 +2,7 @@
 using ProductsCatalogConsoleApp.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace ProductsCatalogConsoleApp
@@ -16,11 +17,33 @@ namespace ProductsCatalogConsoleApp
     {
         static void Main(string[] args)
         {
-            //ProductsDbContext db = new ProductsDbContext();
-            //db.Database.Log = Console.WriteLine;
-            //AddCustomerSuppliers();\
-            SelectCustomers();
+            ProductsDbContext db = new ProductsDbContext();
+            db.Database.Log = Console.WriteLine;
 
+            SqlParameter p1 = new SqlParameter("@CatagoryID", 3);
+            db.Database.ExecuteSqlCommand("Catagory_Delete @CatagoryID", p1);
+
+        }
+
+        private static void SqlDirectExe()
+        {
+            ProductsDbContext db = new ProductsDbContext();
+            db.Database.Log = Console.WriteLine;
+
+
+
+            // increase all products price with 500
+            //var allProducts = db.Products.ToList();
+            //foreach (var item in allProducts)
+            //{
+            //    item.Price += 500;
+            //}
+            //db.SaveChanges();
+
+            //string sqlUpdate = "";
+            db.Database.ExecuteSqlCommand("Catagory_Delete", 3);
+
+            Console.WriteLine("Updated...");
         }
 
         private static void SelectCustomers()
