@@ -55,14 +55,6 @@
   <ItemGroup>
     <Compile Include="Data\ProductsDbContext.cs" />
     <Compile Include="Entities\Product.cs" />
-    <Compile Include="Migrations\202210030555211_InitialCreate.cs" />
-    <Compile Include="Migrations\202210030555211_InitialCreate.designer.cs">
-      <DependentUpon>202210030555211_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202210030846350_BrandAdded.cs" />
-    <Compile Include="Migrations\202210030846350_BrandAdded.designer.cs">
-      <DependentUpon>202210030846350_BrandAdded.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,14 +63,6 @@
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202210030555211_InitialCreate.resx">
-      <DependentUpon>202210030555211_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202210030846350_BrandAdded.resx">
-      <DependentUpon>202210030846350_BrandAdded.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="EF\Entity Framework Hands on Labs %28updated%29 - SellPhones.pdf" />
     <None Include="Lab-Exceptions.pdf" />
     <None Include="Labs\Collections\Collection Exercises.pdf" />
     <None Include="Labs\PLT_Programs.pdf" />

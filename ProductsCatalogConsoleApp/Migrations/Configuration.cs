@@ -7,7 +7,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "ProductsCatalogConsoleApp.Data.ProductsDbContext";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(ProductsCatalogConsoleApp.Data.ProductsDbContext context)

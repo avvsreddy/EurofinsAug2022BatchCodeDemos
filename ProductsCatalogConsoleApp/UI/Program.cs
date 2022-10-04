@@ -16,6 +16,40 @@ namespace ProductsCatalogConsoleApp
     {
         static void Main(string[] args)
         {
+            //ProductsDbContext db = new ProductsDbContext();
+            //db.Database.Log = Console.WriteLine;
+            //AddCustomerSuppliers();\
+            SelectCustomers();
+
+        }
+
+        private static void SelectCustomers()
+        {
+            ProductsDbContext db = new ProductsDbContext();
+            db.Database.Log = Console.WriteLine;
+            var customers = db.People.OfType<Customer>();
+            foreach (var item in customers)
+            {
+                Console.WriteLine(item.Name);
+            }
+        }
+
+        private static void AddCustomerSuppliers()
+        {
+            ProductsDbContext db = new ProductsDbContext();
+            db.Database.Log = Console.WriteLine;
+            Address a = new Address();
+            Customer c = new Customer { Name = "Customer 1", Discount = 250, Type = "Silver" };
+            Supplier s = new Supplier { Name = "Supplier 1", GST = "dfsd23434erwerwe", Rating = 9 };
+            c.Address = a;
+            s.Address = a;
+            db.People.Add(c);
+            //db.People.Add(s);
+            db.SaveChanges();
+        }
+
+        private static void EgarLoading()
+        {
             ProductsDbContext db = new ProductsDbContext();
             db.Database.Log = Console.WriteLine;
             // Product name and C Name
@@ -36,7 +70,6 @@ namespace ProductsCatalogConsoleApp
             {
                 Console.WriteLine($"{item.Name} \t {item.TheCatagory.Name}");
             }
-
         }
 
         private static void UpdateProductWithCat()

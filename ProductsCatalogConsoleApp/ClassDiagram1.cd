@@ -13,7 +13,7 @@
   <Class Name="ProductsCatalogConsoleApp.Entities.Product">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAQAAAIAAAAAAAAQAAAAAAAACAAAACAABAAA=</HashCode>
+      <HashCode>EAAAAAAAAQAAAIAAAAAAAgQAAAAAAAACAAAACAABAAA=</HashCode>
       <FileName>Entities\Product.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -24,14 +24,38 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="ProductsCatalogConsoleApp.Entities.Supplier">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="1.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAEAACAAAAAAAQQ=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQQ=</HashCode>
       <FileName>Entities\Product.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Products" />
     </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ProductsCatalogConsoleApp.Entities.Address">
+    <Position X="5.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAABAAAAAAAAAAAIAAACAAAAABQAAAAA=</HashCode>
+      <FileName>Entities\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProductsCatalogConsoleApp.Entities.Person">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Address" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProductsCatalogConsoleApp.Entities.Customer">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAA=</HashCode>
+      <FileName>Entities\Product.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
