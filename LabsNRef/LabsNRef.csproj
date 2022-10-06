@@ -48,6 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Design Patterns\Application Architecture Guidelines - Venkat.pdf" />
+    <None Include="Design Patterns\Design Case Study - FootBall Game - Venkat.pdf" />
+    <None Include="Design Patterns\Head First Design Patterns.pdf" />
+    <None Include="Design Patterns\Head First OOAD.pdf" />
+    <None Include="Design Patterns\SOLID Design Principles - Venkat.pdf" />
     <None Include="EF\01-EF Hands-On Labs.pdf" />
     <None Include="EF\Airline Management System - EF Case Study.pdf" />
     <None Include="EF\Entity Framework Hands on Labs %28updated%29 - SellPhones.pdf" />
