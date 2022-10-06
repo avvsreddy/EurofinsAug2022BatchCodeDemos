@@ -1,11 +1,19 @@
-﻿namespace POSApplication
+﻿using System;
+using System.Configuration;
+
+namespace POSApplication
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            TaxCalculatorFactory factory = new TaxCalculatorFactory();
-            ITaxCalculator calc = factory.CreateTaxCalculator("TN");
+            TaxCalculatorFactory factory1 = TaxCalculatorFactory.Instance;
+            //TaxCalculatorFactory factory2 = TaxCalculatorFactory.Instance;
+            //Console.WriteLine($"factory1 = {factory1.GetHashCode()}");
+            //Console.WriteLine($"factory2 = {factory2.GetHashCode()}");
+
+            //ITaxCalculator calc = factory.CreateTaxCalculator();
+            ITaxCalculator calc = TaxCalculatorFactory.Instance.CreateTaxCalculator();
             BillingSystem billingSystem = new BillingSystem(calc);
             billingSystem.GenerateBill();
         }
@@ -14,14 +22,24 @@
 
     public class TaxCalculatorFactory
     {
-        public ITaxCalculator CreateTaxCalculator(string state)
+        private TaxCalculatorFactory()
         {
 
-            if (state == "TN")
-                return new TNTaxCalculator();
-            else if (state == "KA")
-                return new KATaxCalculator();
-            return null;
+        }
+
+        public static readonly TaxCalculatorFactory Instance = new TaxCalculatorFactory();
+        //public static TaxCalculatorFactory GetInstance()
+        //{
+        //    if (instance == null)
+        //        instance = new TaxCalculatorFactory();
+        //    return instance;
+        //}
+        public virtual ITaxCalculator CreateTaxCalculator()
+        {
+            string calculatorClassName = ConfigurationManager.AppSettings["CALC"];
+            // Reflextion
+            Type theType = Type.GetType(calculatorClassName);
+            return (ITaxCalculator)Activator.CreateInstance(theType);
         }
     }
 
@@ -84,5 +102,18 @@
         }
     }
 
-
+    public class APTaxCalculator : ITaxCalculator
+    {
+        public double CalculateTax(double amount)
+        {
+            // TN tax calculator
+            int cst = 120;
+            int tst = 150;
+            int es = 70;
+            int abc = 10;
+            double tax = cst + tst + es + abc;
+            System.Console.WriteLine("Using AP Tax Calculator");
+            return tax;
+        }
+    }
 }
