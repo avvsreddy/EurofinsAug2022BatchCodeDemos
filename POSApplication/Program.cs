@@ -116,4 +116,25 @@ namespace POSApplication
             return tax;
         }
     }
+
+    public class USTaxCalculator
+    {
+        public long ComputeTax(long amount)
+        {
+            Console.WriteLine("Using US Tax Calculator");
+            return 234;
+        }
+    }
+
+    public class USTaxCalculatorAdaptor : ITaxCalculator
+    {
+        public double CalculateTax(double amount)
+        {
+            USTaxCalculator calc = new USTaxCalculator();
+            long tax = calc.ComputeTax((long)amount);
+            return tax;
+        }
+    }
 }
+
+// Head First DP/OOAD
