@@ -2,14 +2,14 @@
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<KnowledgeHubProtal2022.Models.KnowledgeHubDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<KnowledgeHubProtal2022.Models.Data.KnowledgeHubDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(KnowledgeHubProtal2022.Models.KnowledgeHubDbContext context)
+        protected override void Seed(KnowledgeHubProtal2022.Models.Data.KnowledgeHubDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
