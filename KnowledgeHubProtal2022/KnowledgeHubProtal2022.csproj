@@ -259,6 +259,7 @@
     <Content Include="Views\Articles\Submit.cshtml" />
     <Content Include="Views\Shared\_SearchArticlesPartialView.cshtml" />
     <Content Include="Views\Articles\CatagoryHyperlinks.cshtml" />
+    <Content Include="Views\Articles\Review.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

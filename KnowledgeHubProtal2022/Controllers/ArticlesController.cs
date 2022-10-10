@@ -67,5 +67,27 @@ namespace KnowledgeHubProtal2022.Controllers
             return PartialView(catagories);
         }
 
+        public ActionResult Review()
+        {
+            var articlesForReview = articlesRepo.GetArticlesForReview();
+            return View(articlesForReview);
+        }
+
+        public ActionResult Approve(List<int> articleIds)
+        {
+            articlesRepo.Approve(articleIds);
+            TempData["Message"] = $"{articleIds.Count} articles approved";
+            //TODO: send mail notification to article author
+            return RedirectToAction("Review");
+        }
+
+        public ActionResult Reject(List<int> articleIds)
+        {
+            articlesRepo.Reject(articleIds);
+            TempData["Message"] = $"{articleIds.Count} articles rejected";
+            //TODO: send mail notification to article author
+            return RedirectToAction("Review");
+        }
+
     }
 }
