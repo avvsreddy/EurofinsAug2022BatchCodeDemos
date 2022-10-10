@@ -14,6 +14,7 @@ namespace KnowledgeHubProtal2022.Models.Data
 
         // configure the tables
         public DbSet<Catagory> Catagories { get; set; }
+        public DbSet<Article> Articles { get; set; }
 
     }
 }
