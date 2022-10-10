@@ -1,0 +1,7 @@
+﻿@model List<KnowledgeHubProtal2022.Models.Entities.Catagory>
+
+@foreach (var item in Model)
+{
+    <a href="/Articles/Index?data=@item.Name">@item.Name</a> <text>|</text>
+}
+

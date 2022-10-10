@@ -1,6 +1,7 @@
 ﻿using KnowledgeHubProtal2022.Models.Data;
 using KnowledgeHubProtal2022.Models.Entities;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -13,11 +14,18 @@ namespace KnowledgeHubProtal2022.Controllers
         private IArticlesRepository articlesRepo = new ArticlesRepository();
         private ICatagoriesRepository catagoryRepo = new CatagoriesRepository();
         // GET: Articles
-        public ActionResult Index()
+        public ActionResult Index(string data = null)
         {
             // fetch articlers for browse
+            List<Article> articles = new List<Article>();
+            if (data == null)
+                articles = articlesRepo.GetArticlesForBrowse();
+            else
+                articles = (from a in articlesRepo.GetArticlesForBrowse()
+                            where a.Title.ToLower().Contains(data.ToLower()) || a.Description.ToLower().Contains(data.ToLower()) || a.Catagory.Name.ToLower().Contains(data.ToLower()) || a.Catagory.Description.ToLower().Contains(data.ToLower())
+                            select a).ToList();
 
-            return View(articlesRepo.GetArticlesForBrowse());
+            return View(articles);
         }
 
         [HttpGet]
@@ -50,6 +58,13 @@ namespace KnowledgeHubProtal2022.Controllers
 
             //ViewBag.CatagoryID = catagories;
             return RedirectToAction("Submit");
+        }
+
+        [ChildActionOnly]
+        public ActionResult CatagoryHyperlinks()
+        {
+            var catagories = catagoryRepo.GetCatagories();
+            return PartialView(catagories);
         }
 
     }
