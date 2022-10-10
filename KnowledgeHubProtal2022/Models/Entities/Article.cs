@@ -10,7 +10,7 @@ namespace KnowledgeHubProtal2022.Models.Entities
         public string Title { get; set; }
         [Required]
         public string Url { get; set; }
-        [MaxLength(100)]
+        [MaxLength(500)]
         public string Description { get; set; }
         public int CatagoryID { get; set; }
         public virtual Catagory Catagory { get; set; }

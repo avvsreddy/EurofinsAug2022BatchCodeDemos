@@ -1,14 +1,24 @@
 ﻿using KnowledgeHubProtal2022.Models.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KnowledgeHubProtal2022.Models.Data
 {
     public class ArticlesRepository : IArticlesRepository
     {
+        KnowledgeHubDbContext db = new KnowledgeHubDbContext();
+
         public void Approve(List<int> articleIds)
         {
-            throw new NotImplementedException();
+            // TODO: need to optimize the logic
+            foreach (var aid in articleIds)
+            {
+                var article = db.Articles.Find(aid);
+                if (article != null)
+                    article.IsApproved = true;
+            }
+            db.SaveChanges();
         }
 
         public Article GetArticle(int id)
@@ -18,17 +28,24 @@ namespace KnowledgeHubProtal2022.Models.Data
 
         public List<Article> GetArticlesForBrowse()
         {
-            throw new NotImplementedException();
+            return db.Articles.Where(a => a.IsApproved).ToList();
         }
 
         public List<Article> GetArticlesForReview()
         {
-            throw new NotImplementedException();
+            return db.Articles.Where(a => !a.IsApproved).ToList();
         }
 
         public void Reject(List<int> articleIds)
         {
-            throw new NotImplementedException();
+            // TODO: need to optimize the logic
+            foreach (var aid in articleIds)
+            {
+                var article = db.Articles.Find(aid);
+                if (article != null)
+                    db.Articles.Remove(article);
+            }
+            db.SaveChanges();
         }
 
         public List<Article> Search(string data)
@@ -38,7 +55,8 @@ namespace KnowledgeHubProtal2022.Models.Data
 
         public void Submit(Article article)
         {
-            throw new NotImplementedException();
+            db.Articles.Add(article);
+            db.SaveChanges();
         }
     }
 }
