@@ -4,6 +4,7 @@ using System.Web.Mvc;
 
 namespace KnowledgeHubProtal2022.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class CatagoriesController : Controller
     {
 
@@ -12,6 +13,8 @@ namespace KnowledgeHubProtal2022.Controllers
 
         // GET: Catagories
         // .../catagories/index
+
+        //[AllowAnonymous]
         public ActionResult Index()
         {
             // fetch the catagories information from model/dal

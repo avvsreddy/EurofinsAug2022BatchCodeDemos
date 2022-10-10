@@ -28,6 +28,7 @@ namespace KnowledgeHubProtal2022.Controllers
             return View(articles);
         }
 
+        [Authorize]
         [HttpGet]
         public ActionResult Submit()
         {
@@ -39,6 +40,7 @@ namespace KnowledgeHubProtal2022.Controllers
             return View();
         }
         [HttpPost]
+        [Authorize]
         public ActionResult Submit(Article article)
         {
             if (!ModelState.IsValid)
@@ -66,13 +68,13 @@ namespace KnowledgeHubProtal2022.Controllers
             var catagories = catagoryRepo.GetCatagories();
             return PartialView(catagories);
         }
-
+        [Authorize(Roles = "admin")]
         public ActionResult Review()
         {
             var articlesForReview = articlesRepo.GetArticlesForReview();
             return View(articlesForReview);
         }
-
+        [Authorize(Roles = "admin")]
         public ActionResult Approve(List<int> articleIds)
         {
             articlesRepo.Approve(articleIds);
@@ -80,7 +82,7 @@ namespace KnowledgeHubProtal2022.Controllers
             //TODO: send mail notification to article author
             return RedirectToAction("Review");
         }
-
+        [Authorize(Roles = "admin")]
         public ActionResult Reject(List<int> articleIds)
         {
             articlesRepo.Reject(articleIds);
