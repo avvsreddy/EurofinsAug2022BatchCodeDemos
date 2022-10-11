@@ -1,15 +1,21 @@
 ﻿using KnowledgeHubProtal2022.Models.Data;
 using KnowledgeHubProtal2022.Models.Entities;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace KnowledgeHubProtal2022.Controllers
 {
-    [Authorize(Roles = "admin")]
+    //[Authorize(Roles = "admin")]
     public class CatagoriesController : Controller
     {
 
         //private KnowledgeHubDbContext db = new KnowledgeHubDbContext();
-        private ICatagoriesRepository repo = new CatagoriesRepository();
+        private ICatagoriesRepository repo = null;// new CatagoriesRepository();
+
+        public CatagoriesController(ICatagoriesRepository repo)
+        {
+            this.repo = repo;
+        }
 
         // GET: Catagories
         // .../catagories/index
@@ -44,6 +50,19 @@ namespace KnowledgeHubProtal2022.Controllers
             TempData["Message"] = $"Catagory {catagory.Name} Successfully Created";
             return RedirectToAction("Index");
         }
+
+        public async Task<ActionResult> SaveAsync(Catagory catagory)
+        {
+            // validate
+            if (!ModelState.IsValid)
+                return View("Create");
+            //db.Catagories.Add(catagory);
+            //db.SaveChanges();
+            await repo.CreateAsync(catagory);
+            TempData["Message"] = $"Catagory {catagory.Name} Successfully Created";
+            return RedirectToAction("Index");
+        }
+
 
         public ActionResult Delete(int id)
         {

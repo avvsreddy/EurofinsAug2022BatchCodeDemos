@@ -1,6 +1,7 @@
 ﻿using KnowledgeHubProtal2022.Models.Entities;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace KnowledgeHubProtal2022.Models.Data
 {
@@ -11,6 +12,12 @@ namespace KnowledgeHubProtal2022.Models.Data
         {
             db.Catagories.Add(catagory);
             db.SaveChanges();
+        }
+
+        public async Task CreateAsync(Catagory catagory)
+        {
+            db.Catagories.Add(catagory);
+            await db.SaveChangesAsync();
         }
 
         public void Delete(int id)

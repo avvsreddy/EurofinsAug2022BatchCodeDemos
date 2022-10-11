@@ -11,11 +11,22 @@ namespace KnowledgeHubProtal2022.Controllers
     {
         // TODO: use IoC
 
-        private IArticlesRepository articlesRepo = new ArticlesRepository();
-        private ICatagoriesRepository catagoryRepo = new CatagoriesRepository();
+        private IArticlesRepository articlesRepo = null;// new ArticlesRepository();
+        private ICatagoriesRepository catagoryRepo = null;// new CatagoriesRepository();
         // GET: Articles
+
+        public ArticlesController(IArticlesRepository articlesRepo, ICatagoriesRepository catagoryRepo)
+        {
+            this.articlesRepo = articlesRepo;
+            this.catagoryRepo = catagoryRepo;
+        }
+
+
+        [OutputCache(Duration = 30, VaryByParam = "data", Location = System.Web.UI.OutputCacheLocation.Any)]
         public ActionResult Index(string data = null)
         {
+
+            ViewBag.ToDay = DateTime.Now.ToLongTimeString();
             // fetch articlers for browse
             List<Article> articles = new List<Article>();
             if (data == null)
