@@ -84,5 +84,21 @@ namespace ProductsCatalogServiceAug2022.Controllers
             return Ok(products);
         }
 
+        // create a new product
+        public IHttpActionResult Post(Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("invalid input");// 400
+            }
+            repo.Create(product);
+            // 201+location+data
+            return Created($"api/products/{product.ProductID}", product); // 201
+        }
+        // delete a product
+
+        // edit a product
+
+
     }
 }
