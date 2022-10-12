@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace KnowledgeHubProtal2022.Controllers
 {
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class CatagoriesController : Controller
     {
 

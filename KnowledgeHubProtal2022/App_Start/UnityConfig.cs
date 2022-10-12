@@ -1,6 +1,12 @@
+using KnowledgeHubProtal2022.Controllers;
+using KnowledgeHubProtal2022.Models;
 using KnowledgeHubProtal2022.Models.Data;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using System.Web.Mvc;
 using Unity;
+using Unity.Injection;
 using Unity.Mvc5;
 
 namespace KnowledgeHubProtal2022
@@ -17,10 +23,20 @@ namespace KnowledgeHubProtal2022
             // e.g. container.RegisterType<ITestService, TestService>();
 
 
-            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+
 
             container.RegisterType<ICatagoriesRepository, CatagoriesRepository>();
-            container.RegisterType<IArticlesRepository, DummyArticlesRepo>();
+            container.RegisterType<IArticlesRepository, ArticlesRepository>();
+
+
+
+            container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>();
+            container.RegisterType<UserManager<ApplicationUser>>();
+            container.RegisterType<DbContext, ApplicationDbContext>();
+            container.RegisterType<ApplicationUserManager>();
+            container.RegisterType<AccountController>(new InjectionConstructor());
+
+            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
 }

@@ -11,9 +11,9 @@ namespace KnowledgeHubProtal2022
 
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
-
-            AreaRegistration.RegisterAllAreas();
             UnityConfig.RegisterComponents();
+            AreaRegistration.RegisterAllAreas();
+
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

@@ -29,6 +29,7 @@ namespace KnowledgeHubProtal2022.Models.Data
         public List<Article> GetArticlesForBrowse()
         {
             return db.Articles.Where(a => a.IsApproved).ToList();
+
         }
 
         public List<Article> GetArticlesForReview()
